@@ -9,8 +9,8 @@ using Newtonsoft.Json.Linq;
 
 namespace GradeBook.GradeBooks
 {
-    public class BaseGradeBook
-    {
+       public abstract class BaseGradeBook
+        {
         public GradeBookType Type { set; get; }
         public string Name { get; set; }
         public List<Student> Students { get; set; }
