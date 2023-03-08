@@ -132,35 +132,35 @@ namespace GradeBook.GradeBooks
             //}
             //return 0;
 
-            double gpa = 0;
+            int points = 0;
 
             switch (letterGrade)
             {
                 case 'A':
-                    gpa = 4;
+                    points = 4;
                     break;
                 case 'B':
-                    gpa = 3;
+                    points = 3;
                     break;
                 case 'C':
-                    gpa = 2;
+                    points = 2;
                     break;
                 case 'D':
-                    gpa = 1;
+                    points = 1;
                     break;
                 case 'F':
-                    gpa = 0;
+                    points = 0;
                     break;
                 default:
                     break;
             }
 
-            if (studentType == StudentType.Honors || studentType == StudentType.DualEnrolled)
+            if (IsWeighted && (studentType == StudentType.Honors || studentType == StudentType.DualEnrolled))
             {
-                gpa += 1;
+                points += 1;
             }
 
-            return gpa;
+            return points;
         }
 
         public virtual void CalculateStatistics()
