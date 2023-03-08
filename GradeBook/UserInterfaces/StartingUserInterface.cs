@@ -59,15 +59,17 @@ namespace GradeBook.UserInterfaces
             //BaseGradeBook gradeBook = new BaseGradeBook(name);
             Console.WriteLine("Created gradebook {0}.", name);
             //GradeBookUserInterface.CommandLoop(gradeBook);
-
             if (parts[2] == "standard")
             {
                 StandardGradeBook standardGradeBook = new StandardGradeBook(name, isWeighted);
+                GradeBookUserInterface.CommandLoop(standardGradeBook);
             }
             else if (parts[2] == "ranked")
             {
                 RankedGradeBook rankedGradeBook = new RankedGradeBook(name, isWeighted);
+                GradeBookUserInterface.CommandLoop(rankedGradeBook);
             }
+
 
         }
 
